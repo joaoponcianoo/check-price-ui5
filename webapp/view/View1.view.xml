@@ -1,0 +1,102 @@
+<mvc:View
+    xmlns:table="sap.ui.table"
+    controllerName="pricetable.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Input
+                id="inputSearch"
+                placeholder="Check Price"
+                submit="onCheckPrice"
+                width="25%"
+            />
+            <Button
+                id="resetFiltersButton"
+                icon="sap-icon://reset"
+                press="onResetFilters"
+            />
+            <Table
+                id="mainTable"
+                items="{/Products}"
+            >
+                <!--Header-->
+                <headerToolbar>
+                    <OverflowToolbar id="overFlowToolbar">
+                        <Title
+                            id="titleHeader"
+                            text="Products"
+                            level="H3"
+                        />
+                        <ToolbarSpacer id="toolbarSpacer" />
+                        <Button
+                            id="addButton"
+                            icon="sap-icon://add"
+                            text="Add"
+                        />
+                        <Button
+                            id="deleteButton"
+                            icon="sap-icon://delete"
+                            text="Delete"
+                        />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <!--Columns-->
+                <columns>
+                    <Column id="column01">
+                        <Text
+                            id="textColumn01"
+                            text="ProductID"
+                        />
+                    </Column>
+                    <Column id="column02">
+                        <Text
+                            id="textColumn02"
+                            text="ProductName"
+                        />
+                    </Column>
+                    <Column id="column03">
+                        <Text
+                            id="textColumn03"
+                            text="UnitPrice"
+                        />
+                    </Column>
+                    <Column id="column04">
+                        <Text
+                            id="textColumn04"
+                            text="UnitsInStock"
+                        />
+                    </Column>
+                </columns>
+                <!--Items-->
+                <items>
+                    <ColumnListItem id="columnListItem">
+                        <cells>
+                            <Text
+                                id="textCell01"
+                                text="{ProductID}"
+                            />
+                            <Text
+                                id="textCell02"
+                                text="{ProductName}"
+                            />
+                            <Text
+                                id="textCell03"
+                                text="{UnitPrice}"
+                            />
+                            <Text
+                                id="textCell04"
+                                text="{UnitsInStock}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
